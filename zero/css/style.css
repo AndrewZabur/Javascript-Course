@@ -1,0 +1,124 @@
+#card-header{
+  text-align: center;
+}
+#indiv {
+  border: 1px solid lightgray;
+  background: #cccccc;
+  min-height: 320px; 
+  max-height: 320px;
+  overflow-y: scroll; 
+  
+}
+#input {
+  background: #d9d9d9;
+  border-radius: 7px;
+  outline: none;
+}
+
+#button {
+  float: right;
+  width: 100px;
+}
+
+.container {
+  margin-top: 5%;
+}
+
+.text-right {
+  float: right;
+}
+
+.card-block {
+  background: #595959;
+}
+.card-header {
+  background:  #262626;
+}
+
+.card{
+  border-color: #262626; 
+}
+
+.btn {
+  background:  #262626;
+}
+
+body {
+  background: #808080;
+}
+
+ul{
+  width: 97%;
+}
+
+
+
+/* Chat containers */
+.inn {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+/* Darker chat container */
+.darker {
+    border-color: #4d4d4d;
+    background-color: #999999;
+}
+
+/* Lighter chat container */
+.lighter {
+    border-color: #4d4d4d;
+    background-color: #e6e6e6;
+}
+
+/* Clear floats */
+.inn::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Style images */
+.inn img {
+    float: left;
+    max-width: 60px;
+    min-height: 60px;
+    width: 100%;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+/* Style the right image */
+.inn img.right {
+    float: right;
+    margin-left: 20px;
+    margin-right:0;
+}
+
+/* Style time text */
+.time-right {
+    float: right;
+    color: #262626;
+}
+
+/* Style time text */
+.time-left {
+
+    padding-top: 39px;
+    float: left;
+    color:#262626;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
