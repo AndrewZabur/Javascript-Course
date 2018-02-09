@@ -186,6 +186,29 @@ function answer() {
         scroll(); 
 
     }
+    else {
+        let text = document.createTextNode('Sorry I can`t answer. Try something else.');
+        
+
+        div.classList.add("inn", "darker");
+        img.classList.add("right");
+        p.classList.add("text-right");    
+        span.classList.add('time-left') 
+
+        img.setAttribute('src', 'img/alberto.png');
+        p.appendChild(text);
+        span.appendChild(time);
+
+        div.appendChild(img);
+        div.appendChild(p);
+        div.appendChild(span);
+        
+        setTimeout(function(){li.appendChild(div);
+                              ul.appendChild(li);}, 1000);  
+
+        scroll(); 
+
+    }
 
     scroll();
 }
