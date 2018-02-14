@@ -1,9 +1,14 @@
 $("#input").keypress(function(event){
-               if(event.keyCode==13){
-                event.preventDefault();
-                answer();
-               }
- });
+    if(event.keyCode==13){
+        event.preventDefault();
+        answer();
+    }
+});
+
+function scroll(){
+        let divElem = document.getElementById('indiv'); 
+        divElem.scrollTop = divElem.scrollHeight - divElem.clientHeight;
+}
 
 function formatTime(date) {
     let hours = date.getHours();
@@ -18,10 +23,6 @@ function formatTime(date) {
     }
     
     return strTime;
-}
-
-function scroll(){
-    $('#indiv').animate({scrollTop: 9999});
 }
 
 function text() {
@@ -92,8 +93,8 @@ function answer() {
         div.appendChild(p);
         div.appendChild(span);
         setTimeout(function(){li.appendChild(div);
-                              ul.appendChild(li);}, 1000);   
-         scroll(); 
+                              ul.appendChild(li);
+                              scroll();}, 1000);   
     }
 
     else if((/^When the javascript was invented\?$/).test(question)){
@@ -115,8 +116,8 @@ function answer() {
         div.appendChild(span);
         
         setTimeout(function(){li.appendChild(div);
-                              ul.appendChild(li);}, 1000);
-         scroll(); 
+                              ul.appendChild(li);
+                              scroll();}, 1000);
     }
 
     else if((/^Do you think javascript worth learning\?$/).test(question)){
@@ -137,8 +138,8 @@ function answer() {
         div.appendChild(span);
         
         setTimeout(function(){li.appendChild(div);
-                              ul.appendChild(li);}, 1000);    
-         scroll();     
+                              ul.appendChild(li);
+                              scroll();}, 1000);      
     }
 
     else if((/(^|\W{1,})Jquery(\W|$)/i).test(question)){
@@ -159,8 +160,8 @@ function answer() {
         div.appendChild(span);
         
         setTimeout(function(){li.appendChild(div);
-                              ul.appendChild(li);}, 1000); 
-         scroll();        
+                              ul.appendChild(li);
+                              scroll();}, 1000);     
     }
 
     else if((/^Where did you find this facts\?$/).test(question)){
@@ -181,36 +182,9 @@ function answer() {
         div.appendChild(span);
         
         setTimeout(function(){li.appendChild(div);
-                              ul.appendChild(li);}, 1000);  
-
-        scroll(); 
-
+                              ul.appendChild(li);
+                              scroll();}, 1000);  
     }
-    else {
-        let text = document.createTextNode('Sorry I can`t answer. Try something else.');
-        
-
-        div.classList.add("inn", "darker");
-        img.classList.add("right");
-        p.classList.add("text-right");    
-        span.classList.add('time-left') 
-
-        img.setAttribute('src', 'img/alberto.png');
-        p.appendChild(text);
-        span.appendChild(time);
-
-        div.appendChild(img);
-        div.appendChild(p);
-        div.appendChild(span);
-        
-        setTimeout(function(){li.appendChild(div);
-                              ul.appendChild(li);}, 1000);  
-
-        scroll(); 
-
-    }
-
-    scroll();
 }
 
  
