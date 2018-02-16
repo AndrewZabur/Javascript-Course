@@ -79,7 +79,7 @@ function searching(){
       
       if(search !== ""){
         for(let i = 0; i < data.length; i++){
-          if(search === data[i].first_name){
+          if(search === data[i].first_name || search === data[i].last_name || search === data[i].gender || search === data[i].company || search === data[i].language){
             found.push(data[i]);
           }  
         }
