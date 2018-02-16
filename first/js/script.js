@@ -1,80 +1,57 @@
 let url = "https:/\/gist.githubusercontent.com/AndrewZabur/ed695b8dbc2f49ccc7d862eca10716f0/raw/2e14efa40f162a07adbfba84058ec0a9909f0d08/tableInformation.json";
+let dataTmp = [];
+
 
 $(document).ready(function () {
   $.ajax({
     url: url, 
     dataType: 'json', 
     success: function (data) { //тут data - це масив об'єктів
-                               
+                           
       $.each(data, function(key, value) { //кожен елемент масиву додаємо до таблиці
         
         let tableFragment = createFragment(value);
-        
+        dataTmp.push(data[key]);
         $("#tbody").append(tableFragment);
       });
     }
   });
 });
 
+
+
 $('#sortAZ').click(function() {
-  $("#tbody").empty();
-  $.getJSON(url, function(data) {
-      
+  
+      $("#tbody").empty();   
       let tableFragment;
+      sortAZ(dataTmp);
 
-      for(let i = 0; i < data.length; i++){
-        data.sort(function(arg1, arg2){
-           if (arg1.first_name > arg2.first_name) {
-              return 1;
-           }
-           if (arg1.first_name < arg2.first_name) {
-              return -1;
-           }
-           else return 0; 
-        });
+      for (var i = 0; i < dataTmp.length; i++) {
+        tableFragment = createFragment(dataTmp[i]);
+        $("#tbody").append(tableFragment);
       }
-
-      $.each(data, function(key, value) { 
-          tableFragment = createFragment(value);        
-          $("#tbody").append(tableFragment);
-      });
-  });
 });
 
 
+
 $('#sortZA').click(function() {
-  $("#tbody").empty();
-  $.getJSON(url, function(data) {
       
+      $("#tbody").empty();   
       let tableFragment;
+      sortZA(dataTmp);
 
-      for(let i = 0; i < data.length; i++){
-        data.sort(function(arg1, arg2){
-            if (arg1.first_name < arg2.first_name) {
-              return 1;
-            }
-            if (arg1.first_name > arg2.first_name) {
-              return -1;
-            }
-            else return 0; 
-        });
-      }
-
-      $.each(data, function(key, value) { 
-        
-        tableFragment = createFragment(value); 
+      for (var i = 0; i < dataTmp.length; i++) {
+        tableFragment = createFragment(dataTmp[i]);
         $("#tbody").append(tableFragment);
-      
-      });
-  });
+      }
 });
 
 function searching(){
   $("#tbody").empty();
-  $.getJSON('https://gist.githubusercontent.com/AndrewZabur/ed695b8dbc2f49ccc7d862eca10716f0/raw/48a1687e0b5ea701d6cb67d3b7123cafb2e8cf68/tableInformation.json', function(data) {
+  $.getJSON(url, function(data) {
       
       let tableFragment;
-      let search = $('#searchInput').val();
+      let search = $('#searchInput').val().trim();
       let found = [];
       
       if(search !== ""){
@@ -103,6 +80,34 @@ $("#searchInput").keypress(function(event){
         searching();
     }
 });
+
+function sortAZ(data){
+  for(let i = 0; i < data.length; i++){
+    data.sort(function(arg1, arg2){
+       if (arg1.first_name > arg2.first_name) {
+          return 1;
+       }
+       if (arg1.first_name < arg2.first_name) {
+          return -1;
+       }
+       else return 0; 
+    });
+  }
+}
+
+function sortZA(data){
+  for(let i = 0; i < data.length; i++){
+    data.sort(function(arg1, arg2){
+       if (arg1.first_name < arg2.first_name) {
+          return 1;
+       }
+       if (arg1.first_name > arg2.first_name) {
+          return -1;
+       }
+       else return 0; 
+    });
+  }
+}
 
 function createFragment(value){
    return $("<tr><td class='table-active'><input type='checkbox' name='tableCheck'></td><td class='table-active'>" 
