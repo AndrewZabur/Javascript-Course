@@ -1,24 +1,22 @@
 #time{
-  color: white;
+  color: black;
   font-size: 7vh;
   font-family: 'Courier New', Courier, monospace;
 }
 
 .container{
-  margin-top: 7%;
-  border-radius: 100px;
-  background: rgba(4, 78, 238, 0.938); 
+  margin-top: 5%;
 }
 
 body{
-  background: honeydew;
+  background: whitesmoke;
 }
 
 
 .today-date {
   height: 17vh;
-  color: white;
   font-size: 7vh;
+  color: black;
   font-family: 'Courier New', Courier, monospace;
   line-height: 20.4vh;
   display: flex;
