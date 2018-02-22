@@ -1,0 +1,33 @@
+#time{
+  color: white;
+  font-size: 7vh;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.container{
+  margin-top: 7%;
+  border-radius: 100px;
+  background: rgba(4, 78, 238, 0.938); 
+}
+
+body{
+  background: honeydew;
+}
+
+
+.today-date {
+  height: 17vh;
+  color: white;
+  font-size: 7vh;
+  font-family: 'Courier New', Courier, monospace;
+  line-height: 20.4vh;
+  display: flex;
+  justify-content: center;
+}
+
+.clock {
+  height: 17vh;
+  line-height: 20.4vh;
+  display: flex;
+  justify-content: center;
+}
