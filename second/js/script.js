@@ -1,20 +1,21 @@
 (function () {
   
-	let months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    let months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 	let textMonths = ["января","февраля","марта","апреля","мая","июня","июля","августа","сентября","октября","ноября","декабря"];
 	let daysOfWeek = ["воскресенье", "понедельник", "вторник", "среда", "четверг", "пятница", "cуббота"];
 	let endings = ["день","дня","дней"];
 	let today = document.getElementById("today");
 	let toTheNewYears = document.getElementById("toTheNewYear");
-
 	window.onload = function() {
 		setInterval(function(){
 			todaysDay();		
 			clock();		
+			
 			toTheNewYear(new Date().getYear());	
 		}, 1000);
 	}
 
+	
 	function todaysDay(){
 		let monthNumber = new Date().getMonth();
 		let dayOfTheWeek = new Date().getDay();
@@ -39,7 +40,6 @@
 		} else{
 			daysToTheNewYear = 365 - daysOverThisYear();
 			toTheNewYears.innerHTML = `До ${newYear} года ${left(daysToTheNewYear)} ${daysToTheNewYear} ${endOfWord(daysToTheNewYear)}.`;
-			console.log(toTheNewYear);
 		}
 	}
 
@@ -76,8 +76,6 @@
 		return endOfWord(dayNum)==endings[0] ? "остался" : "осталось";
 	}
 }());
-
-
 
 
 

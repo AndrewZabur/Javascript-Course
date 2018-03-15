@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>Список пользователей (прототипное наследование)</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+   
+  </head>
+
+  <body>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+      <h5 class="my-0 mr-md-auto font-weight-normal">JSExpert</h5>
+      <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="#">Главная</a>
+        <a class="p-2 text-dark" href="#">Галлерея</a>
+        <a class="p-2 text-dark" href="#">О компании</a>
+        <a class="p-2 text-dark" href="#">Курсы</a>
+      </nav>
+      <a class="btn btn-outline-primary" href="#">Войти</a>
+    </div>
+
+    <main role="main">
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Список пользователей</h1>
+          <p class="lead text-muted">На этой странице вы можете увидеть всех пользователей системы, их контактные данные и уровень доступа. </p>
+        </div>
+      </section>
+      
+      <div class="container">
+        <div id="update-view" class="row hide">
+          <div class="col-md-12 order-md-1">
+            <h4 class="mb-3">Информация о пользователе</h4>
+            <div id="details-items">
+
+            </div>
+            <button class="btn btn-primary btn-block col-sm-2" id="back-btn">Обновить</button>
+            <div class="py-5"></div>
+          </div>
+        </div>
+
+        <div id="create-view" class="row hide">
+            <div class="col-md-12 order-md-1">
+              <h4 class="mb-3">Информация о пользователе</h4>
+              <div id="create-items">
+  
+              </div>
+              <button class="btn btn-primary btn-block col-sm-2" id="add-btn">Добавить</button>
+              <div class="py-5"></div>
+            </div>
+          </div>
+          
+        <div id="main-view" class="row">  
+  
+          <table class="table table-hover" id="info-table">
+            <caption>
+                <button type="button" class="btn btn-secondary mb-3" id="create">
+                    Добавить пользователя
+                </button>
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Имя</th>
+                <th scope="col">Фамилия</th>
+                <th scope="col">Email</th>
+                <th scope="col">Город</th>
+                <th scope="col">Компания</th>
+                <th scope="col">Рeдактировать</th>
+                <th scope="col">Удалить</th>
+              </tr>
+            </thead> 
+            <tbody id="user-list">
+
+            </tbody>
+          </table> 
+        </div>             
+      </div>
+    </main>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script> 
+    <script src="node_modules/tether/dist/js/tether.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script> 
+  </body>
+</html>
+

@@ -1,0 +1,35 @@
+body {
+    background: whitesmoke;
+}
+label{
+    color: white;
+    font-size: 25px;
+}
+input{
+    background: white;
+    outline: none;
+    border: none;
+    border-radius: 5px; 
+}
+.jumbotron{
+  margin: 0px auto;
+  padding: 70px 30px;
+}
+#pageName{
+    font-family: 'Courier New', Courier, monospace;
+}
+#setDiv{
+    margin: 0%;    
+}
+#myAlarms{
+    text-align: center;
+}
+#event{
+    margin-top: 30px;
+    font-size: 30px; 
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+
