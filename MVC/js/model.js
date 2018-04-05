@@ -4,6 +4,14 @@ export default class Model{
         this.usersData = [];
     }
 
+    get getUsersData(){
+        return this.usersData;
+    }
+
+    getSpecificUser(id){
+        return this.usersData[id];
+    }
+
     getData(){
         let xhr = new XMLHttpRequest();
         xhr.open('GET', this.url, false);

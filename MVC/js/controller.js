@@ -17,21 +17,19 @@ export default class Controller{
     }
 
     updateClick(){
-        if(this.view.updateView.getAttribute("data-id") != undefined){
           let id = this.view.updateView.getAttribute("data-id");
           let editedObj = this.view.getNewUserInfo();
           this.model.editUser(id, editedObj);
           this.view.removeShowAddHide(this.view.updateView);
-          this.view.renderTable(this.model.usersData);
-          this.view.removeHideAddShow(this.view.usersListView);
-        } 
+          this.view.renderTable(this.model.getUsersData);
+          this.view.removeHideAddShow(this.view.usersListView); 
     }
     
     createClick(){
         this.view.removeShowAddHide(this.view.createView);
         let createdObj = this.view.createNewUserInfo();
         this.model.pushNewUser(createdObj);
-        this.view.renderTable(this.model.usersData);
+        this.view.renderTable(this.model.getUsersData);
         this.view.removeHideAddShow(this.view.usersListView);
     }
 
@@ -39,14 +37,14 @@ export default class Controller{
         let target = event.target;
         let id = target.id;
         if(target.getAttribute("data-info") == "delete"){
-            this.model.deleteUser(id);
-            this.view.renderTable(this.model.usersData);
+            this.model.deleteUser(parseInt(id));
+            this.view.renderTable(this.model.getUsersData);
         }
         if(target.getAttribute("data-info") == "update"){
-            this.view.updateUserView.innerHTML = this.view.addingUpdateView(this.model.usersData[id]);
+            this.view.updateUserView.innerHTML = this.view.addingUpdateView(this.model.getSpecificUser(parseInt(id)));
             this.view.removeShowAddHide(this.view.usersListView);
             this.view.removeHideAddShow(this.view.updateView);
-            this.view.updateView.setAttribute("data-id", id);
+            this.view.updateView.setAttribute("data-id", parseInt(id));
         }
         if(id == "create"){
             this.view.createUserView.innerHTML = this.view.addingCreateView();

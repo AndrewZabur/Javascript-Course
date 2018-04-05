@@ -11,6 +11,46 @@ export default class View{
         this.createUserView = document.getElementById("create-user-info");
     }
 
+    getNewUserInfo(){
+        let edit = {
+            name: document.getElementById("firstName").value,
+            surname: document.getElementById("lastName").value,
+            email: document.getElementById("email").value,
+            city: document.getElementById("city").value,
+            company: document.getElementById("company").value
+        }
+        return edit;
+    }
+
+    createNewUserInfo(){
+        let create = {
+            name: document.getElementById("name").value,
+            surname: document.getElementById("surname").value,
+            email: document.getElementById("emailId").value,
+            city: document.getElementById("town").value,
+            company: document.getElementById("companyId").value
+        }
+        return create;
+    }
+
+    renderTable(data){
+        let table = "";
+        data.forEach((element, i) => {
+            table += this.addRow(element, i);
+        });
+        this.usersList.innerHTML = table;
+    }
+
+    removeHideAddShow(element){
+        element.classList.remove("hide");
+        element.classList.add("show");
+    }
+
+    removeShowAddHide(element){
+        element.classList.remove("show");
+        element.classList.add("hide");
+    }
+
     addRow(element, i){
         return `<tr>   
                     <td>${element.id}</td>
@@ -19,8 +59,8 @@ export default class View{
                     <td>${element.email}</td>
                     <td>${element.city}</td>
                     <td>${element.company}</td>
-                    <td><button class="btn btn-primary" data-info="update" id="${i}">Редактировать</button></td>
-                    <td><button class="btn btn-danger" data-info="delete" id="${i}">Удалить</button></td>
+                    <td><button class="btn btn-primary" data-info="update" id="${i}update">Редактировать</button></td>
+                    <td><button class="btn btn-danger" data-info="delete" id="${i}delete">Удалить</button></td>
                 </tr>`;
     }
 
@@ -92,45 +132,5 @@ export default class View{
                         </div>
                     </div>
                 </form>`;
-    }
-
-    getNewUserInfo(){
-        let edit = {
-            name: document.getElementById("firstName").value,
-            surname: document.getElementById("lastName").value,
-            email: document.getElementById("email").value,
-            city: document.getElementById("city").value,
-            company: document.getElementById("company").value
-        }
-        return edit;
-    }
-
-    createNewUserInfo(){
-        let create = {
-            name: document.getElementById("name").value,
-            surname: document.getElementById("surname").value,
-            email: document.getElementById("emailId").value,
-            city: document.getElementById("town").value,
-            company: document.getElementById("companyId").value
-        }
-        return create;
-    }
-
-    renderTable(data){
-        let table = "";
-        data.forEach((element, i) => {
-            table += this.addRow(element, i);
-        });
-        this.usersList.innerHTML = table;
-    }
-
-    removeHideAddShow(element){
-        element.classList.remove("hide");
-        element.classList.add("show");
-    }
-
-    removeShowAddHide(element){
-        element.classList.remove("show");
-        element.classList.add("hide");
     }
 }
