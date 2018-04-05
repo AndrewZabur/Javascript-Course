@@ -10,6 +10,7 @@
   let createInfo = document.getElementById("create-view");
   let createUserAdd = document.getElementById("create-items");
   let addButton = document.getElementById("add-btn");
+  
 function addToTheTable(element, i){
   return `<tr>   
             <td>${element.id}</td>
